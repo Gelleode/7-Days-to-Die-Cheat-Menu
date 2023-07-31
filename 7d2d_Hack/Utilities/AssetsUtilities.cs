@@ -17,15 +17,10 @@ namespace Game7D2D.Utilities
 
         public static void GetAssets()
         {
-            Debug.Log("Getting Assets");
             if (!Directory.Exists(Application.dataPath + "/GUISkins/"))
-            {
-                Debug.Log("Directory doesn't exist");
                 Directory.CreateDirectory(Application.dataPath + "/GUISkins/");
-                Debug.Log("Create dir");
-            }
 
-            // will use assets from 7DaysToDie/7DaysToDie_Data/Cheeky.assets
+                // will use assets from 7DaysToDie/7DaysToDie_Data/Cheeky.assets
             AssetBundle Bundle = AssetBundle.LoadFromMemory(File.ReadAllBytes(Application.dataPath + "/Cheeky.assets"));
 
             foreach (Shader s in Bundle.LoadAllAssets<Shader>())
@@ -33,10 +28,10 @@ namespace Game7D2D.Utilities
 
             BonkClip = Bundle.LoadAllAssets<AudioClip>().First();
             VanillaSkin = Bundle.LoadAllAssets<GUISkin>().First();
-            foreach (var s in VanillaSkin.customStyles)
-            {
-                Debug.Log($"{s.name} GUIStyle");
-            }
+            //foreach (var s in VanillaSkin.customStyles)
+            //{
+            //    Debug.Log($"{s.name} GUIStyle");
+            //}
             if (!String.IsNullOrEmpty(Global.Settings.MiscOptions.UISkin))
                 LoadGUISkinFromName(Global.Settings.MiscOptions.UISkin);
             else

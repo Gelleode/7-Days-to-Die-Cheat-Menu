@@ -19,6 +19,7 @@ namespace Game7D2D.Options
         public float BuildInterval = 0.2f;
         public bool Pickup = false;
         public float PickupDistance = 3.5f;
+        public bool ShowAllPlayersOnMap = false;
 
         public string UISkin = "";
 

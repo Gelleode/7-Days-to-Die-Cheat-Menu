@@ -8,7 +8,7 @@
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Game7D2D</RootNamespace>
-    <AssemblyName>7d2d_Hack</AssemblyName>
+    <AssemblyName>Game7D2D</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -21,6 +21,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -29,6 +30,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="0Harmony, Version=2.2.2.0, Culture=neutral, processorArchitecture=MSIL">
@@ -265,6 +267,7 @@
     <Compile Include="Cheats\ESP.cs" />
     <Compile Include="Cheats\Misc.cs" />
     <Compile Include="Menu\Tab\PerksTab.cs" />
+    <Compile Include="Overrides\hkEntityPlayer.cs" />
     <Compile Include="Perk\AllSkills.cs" />
     <Compile Include="Perk\CraftingBook.cs" />
     <Compile Include="Perk\PerkBookSet.cs" />
@@ -293,6 +296,7 @@
     <Compile Include="Perk\InitPerks.cs" />
     <Compile Include="Perk\SkillsUtilities.cs" />
     <Compile Include="Utilities\Manager.cs" />
+    <Compile Include="Utilities\OverrideHelper.cs" />
     <Compile Include="Utilities\Tools.cs" />
   </ItemGroup>
   <ItemGroup>

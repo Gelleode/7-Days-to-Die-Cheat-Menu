@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
@@ -209,11 +210,11 @@ namespace Game7D2D.Utilities
                         materials[k].shader.name == "Game/Particles/Unlit" ||
                         materials[k].shader.name == "Particles/Blood_Particle")
                         continue;
-                    if (shader.name != materials[k].shader.name)
-                    {
-                        Debug.Log($"{materials[k].name}");
-                        Debug.Log($"{materials[k].shader.name}");
-                    }
+                    //if (shader.name != materials[k].shader.name)
+                    //{
+                    //    Debug.Log($"{materials[k].name}");
+                    //    Debug.Log($"{materials[k].shader.name}");
+                    //}
 
                     materials[k].shader = shader;
                     materials[k].SetColor("_ColorVisible", VisibleColor);
@@ -467,6 +468,15 @@ namespace Game7D2D.Utilities
         public static float GetDistance(Vector3 endpos)
         {
             return (float)System.Math.Round(Vector3.Distance(Manager.localP.entityPlayerLocal.transform.position, endpos));
+        }
+
+        public static void OverrideMethod(Type defaultClass, Type overrideClass, string method, BindingFlags bindingflag1, BindingFlags bindingflag2, BindingFlags overrideflag1, BindingFlags overrideflag2)
+        {
+            string overriddenmethod = "OV_" + method;
+
+            var MethodToOverride = defaultClass.GetMember(method, MemberTypes.Method, bindingflag1 | bindingflag2).Cast<MethodInfo>();
+
+            OverrideHelper.RedirectCalls(MethodToOverride.ToArray()[0], overrideClass.GetMethod(overriddenmethod, overrideflag1 | overrideflag2));
         }
     }
 }

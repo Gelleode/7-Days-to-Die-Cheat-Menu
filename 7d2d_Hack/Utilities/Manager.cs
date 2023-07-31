@@ -2,7 +2,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using Game7D2D.Cheats;
+using Game7D2D.Overrides;
 using UnityEngine;
 
 namespace Game7D2D.Utilities
@@ -51,6 +53,11 @@ namespace Game7D2D.Utilities
             Colors.AddColors();
             Debug.Log("Start Coroutine");
             StartCoroutine(UpdateESPObjects());
+
+            //Debug.Log("Overrides");
+            //Tools.OverrideMethod(typeof(EntityPlayer), typeof(hkEntityPlayer), "IsDrawMapIcon", BindingFlags.Instance, BindingFlags.Public, BindingFlags.Instance, BindingFlags.Public);
+            //Debug.Log("Overrides complete");
+
             Debug.Log("Manager End");
         }
 
