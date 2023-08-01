@@ -12,3 +12,5 @@ And in Misc there is Creative Menu, Debug Menu, Build distance and speed cheats 
 To load it you need to compile it and inject Game7D2D via something like MonoInjector.
 
 Namespace - Game7D2D, Class - Load, Method - Start
+
+Anticheat must be off.
