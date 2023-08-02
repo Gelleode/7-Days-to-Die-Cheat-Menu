@@ -36,7 +36,7 @@ namespace Game7D2D.Menu
         private Rect guiRect = new Rect(100, 755, 200, 250);
 
 
-        readonly string Name = "GayCheat";
+        readonly string Name = "Zikok's menu";
         readonly string Version = "v6.6.6";
 
 
